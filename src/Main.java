@@ -23,12 +23,12 @@ public class Main {
                 new Room("Bez balkónu, s výhledem na moře", 3, 3, 2400);
 
         Booking booking1;
-        booking1 = new Booking("Pracovní", LocalDate.of(2021, 7, 19),
-                LocalDate.of(2021, 7, 26));
+        booking1 = new Booking(true, LocalDate.of(2021, 7, 19),
+        LocalDate.of(2021, 9, 14));
 
         Booking booking2;
-        booking2 = new Booking("Rekreační", LocalDate.of(2021, 9, 1),
-                LocalDate.of(2021, 9, 14));
+        booking2 = new Booking(false, LocalDate.of(2021,9,1),
+        LocalDate.of(2021,9,14));
 
 
         List<Guest> guestList = new ArrayList<>();
@@ -45,7 +45,16 @@ public class Main {
         roomList.add(room1);
         roomList.add(room2);
         roomList.add(room3);
-        System.out.println("Číslo pokoje: " + roomList.get(0).getRoomNo());
+
+        for (Room room : roomList) {
+            System.out.println("Číslo pokoje: " + room.getRoomNo());
+            System.out.println("Počet postelí: " + room.getNumberOfBeds());
+            System.out.println("Dispozice: " + room.getDispositions());
+            System.out.println("Cena za noc: " + room.getPricePerNight() + " Kč");
+
+            System.out.println();
+        }
+        /*System.out.println("Číslo pokoje: " + roomList.get(0).getRoomNo());
         System.out.println("Počet postelí: " + roomList.get(0).getNumberOfBeds());
         System.out.println("Dispozice: " + roomList.get(0).getDispositions());
         System.out.println("Cena za noc: " + roomList.get(0).getPricePerNight() + " Kč");
@@ -64,14 +73,14 @@ public class Main {
         System.out.println("Dispozice: " + roomList.get(2).getDispositions());
         System.out.println("Cena za noc: " + roomList.get(2).getPricePerNight() + " Kč");
 
-        System.out.println();
+        System.out.println();*/
 
         List<Booking> bookingList = new ArrayList<>();
         bookingList.add(booking1);
         bookingList.add(booking2);
-        System.out.println("Rezervace pro: " + guestList.get(0).getName() + " "
+       /* System.out.println("Rezervace pro: " + guestList.get(0).getName() + " "
                 + guestList.get(0).getBirthdate());
-        System.out.println("Povaha dovolené: " + bookingList.get(0).getTypeOfVacation());
+        System.out.println("Povaha dovolené: " + bookingList.get(0).returnTypeOfVacation());
         System.out.println("Datum příjezdu: " + bookingList.get(0).getArrivaldate());
         System.out.println("Datum odjezdu: " + bookingList.get(0).getDeparturedate());
 
@@ -80,13 +89,22 @@ public class Main {
         System.out.println("Rezervace pro: " + guestList.get(0).getName() + " "
                 + guestList.get(0).getBirthdate() + " a " +
                 guestList.get(1).getName() + " " + guestList.get(1).getBirthdate());
-        System.out.println("Povaha dovolené: " + bookingList.get(1).getTypeOfVacation());
+        System.out.println("Povaha dovolené: " + bookingList.get(1).returnTypeOfVacation());
         System.out.println("Datum příjezdu: " + bookingList.get(1).getArrivaldate());
         System.out.println("Datum Odjezdu: " + bookingList.get(1).getDeparturedate());
 
-        System.out.println();
+        System.out.println();*/
 
+
+        for (int i = 0; i < bookingList.size(); i++) {
+            System.out.println("Rezervace pro: " + guestList.get(i).getName() + " "
+                    + guestList.get(i).getBirthdate());
+            System.out.println("Povaha dovolené: " + bookingList.get(i).returnTypeOfVacation());
+            System.out.println("Datum příjezdu: " + bookingList.get(i).getArrivaldate());
+            System.out.println("Datum odjezdu: " + bookingList.get(i).getDeparturedate());
+            System.out.println();
+        }
         System.out.println("Seznam všech rezervací: " + bookingList.size());
-
     }
+
 }

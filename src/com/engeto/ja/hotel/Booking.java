@@ -4,40 +4,51 @@ import java.time.LocalDate;
 
 public class Booking {
 
-    private String typeOfVacation;
+    private boolean typeOfVacation;
 
-    private LocalDate arrivaldate;
+    private LocalDate arrivalDate;
 
-    private LocalDate departuredate;
+    private LocalDate departureDate;
 
-    public Booking(String typeOfVacation, LocalDate arrivaldate, LocalDate departuredate) {
+    public Booking(boolean typeOfVacation, LocalDate arrivalDate, LocalDate departureDate) {
         this.typeOfVacation = typeOfVacation;
-        this.arrivaldate = arrivaldate;
-        this.departuredate = departuredate;
+        this.arrivalDate = arrivalDate;
+        this.departureDate = departureDate;
     }
 
-    public String getTypeOfVacation() {
+
+    public boolean getTypeOfVacation() {
         return typeOfVacation;
     }
 
-    public void setTypeOfVacation(String typeOfVacation) {
+    public void setTypeOfVacation(boolean typeOfVacation) {
         this.typeOfVacation = typeOfVacation;
     }
 
     public LocalDate getArrivaldate() {
-        return arrivaldate;
+        return arrivalDate;
     }
 
     public void setArrivaldate(LocalDate arrivaldate) {
-        this.arrivaldate = arrivaldate;
+        this.arrivalDate = arrivaldate;
     }
 
     public LocalDate getDeparturedate() {
-        return departuredate;
+        return departureDate;
     }
 
     public void setDeparturedate(LocalDate departuredate) {
-        this.departuredate = departuredate;
+        this.departureDate = departuredate;
+    }
+    public String returnTypeOfVacation(){
+        String stayType;
+        if (typeOfVacation){
+            stayType = "Pracovní";
+        }else {
+            stayType = "Rekreační";
+        }
+
+        return stayType;
     }
 }
 
