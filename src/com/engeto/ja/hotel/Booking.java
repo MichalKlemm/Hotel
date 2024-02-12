@@ -17,7 +17,6 @@ public class Booking {
         this.departureDate = departureDate;
     }
 
-
     public boolean getTypeOfVacation() {
         return typeOfVacation;
     }

@@ -7,7 +7,6 @@ public class BookingManager {
 
     private int getNumberOfWorkingBookings;
 
-
     private final List<Booking> bookings = new ArrayList<>();
 
     public void addBooking(Booking booking){
