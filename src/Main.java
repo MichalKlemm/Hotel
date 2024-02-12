@@ -16,7 +16,7 @@ public class Main {
                 new Guest("Jan Dvořák", LocalDate.of(1995,5,5));
 
         Room room1 =
-                new Room("Balkón s výhelem na moře ", 1, 1, 1000);
+                new Room("Balkón s výhledem na moře ", 1, 1, 1000);
         Room room2 =
                 new Room("Balkón s výhledem na moře", 2, 1, 1000);
         Room room3 =

@@ -10,6 +10,7 @@ public class Booking {
 
     private LocalDate departureDate;
 
+
     public Booking(boolean typeOfVacation, LocalDate arrivalDate, LocalDate departureDate) {
         this.typeOfVacation = typeOfVacation;
         this.arrivalDate = arrivalDate;

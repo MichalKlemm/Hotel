@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8859531-ff08-45c4-b49a-30b5d1d5fa7a" name="Changes" comment="Domácí úukol 2">
-      <change afterPath="$PROJECT_DIR$/src/BookingManager.java" afterDir="false" />
+    <list default="true" id="e8859531-ff08-45c4-b49a-30b5d1d5fa7a" name="Changes" comment="Oprava cyklů pro výpis rezervací.&#10;Oprava proměnné typeOfVacation ze String na boolean">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookingManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookingManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/engeto/ja/hotel/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/ja/hotel/Booking.java" afterDir="false" />
     </list>
@@ -69,7 +69,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707472583234</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Oprava cyklů pro výpis rezervací.&#10;Oprava proměnné typeOfVacation ze String na boolean">
+      <option name="closed" value="true" />
+      <created>1707766193053</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707766193053</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -85,6 +93,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Domácí úukol 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Domácí úukol 2" />
+    <MESSAGE value="Oprava cyklů pro výpis rezervací.&#10;Oprava proměnné typeOfVacation ze String na boolean" />
+    <option name="LAST_COMMIT_MESSAGE" value="Oprava cyklů pro výpis rezervací.&#10;Oprava proměnné typeOfVacation ze String na boolean" />
   </component>
 </project>
