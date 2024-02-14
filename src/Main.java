@@ -46,9 +46,6 @@ public class Main {
             startDate = startDate.plusDays(2);
         }
 
-        bookingManager.addBooking(booking1);
-        bookingManager.addBooking(booking2);
-
         //Vytvoření rezervací pro Karolínu Tmavou
         startDate = LocalDate.of(2023,8,1);
         for (int i = 0; i < 10; i++){
@@ -62,6 +59,20 @@ public class Main {
         Booking fullAugustBooking = new Booking(false, LocalDate.of(2023,8,1), LocalDate.of(2023,8,31));
         fullAugustBooking.addGuest(guest5);
         bookingManager.addBooking(fullAugustBooking);
+
+        // Přidání pracovních rezervací
+        bookingManager.addBooking(booking1);
+        bookingManager.addBooking(booking2);
+
+        // Výpis všech rezervací
+        bookingManager.printAllBookings();
+
+        // Výpis prvních osmi rekreačních rezervací
+        bookingManager.printFirstRecreationalBookings(8);
+
+        // Statistika podle počtu hostů
+        bookingManager.printGuestStatistics();
+
 
         List<Guest> guestList = new ArrayList<>();
         guestList.add(guest1);
