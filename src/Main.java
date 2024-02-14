@@ -1,5 +1,5 @@
-import com.engeto.ja.hotel.Guest;
 import com.engeto.ja.hotel.Booking;
+import com.engeto.ja.hotel.Guest;
 import com.engeto.ja.hotel.Room;
 
 import java.time.LocalDate;
@@ -8,13 +8,25 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        BookingManager bookingManager = new BookingManager(new ArrayList<>());
 
+        fillBookings(bookingManager);
+    }
+
+    public static void fillBookings(BookingManager bookingManager){
+        // Vytvoření Hostů
         Guest guest1 =
-            new Guest("Adéla Malíková", LocalDate.of(1993, 3, 13));
-
+                new Guest("Adéla Malíková", LocalDate.of(1993, 3, 13));
         Guest guest2 =
                 new Guest("Jan Dvořák", LocalDate.of(1995,5,5));
+        Guest guest3 =
+                new Guest("Karel Dvořák", LocalDate.of(1990,5,15));
+        Guest guest4 =
+                new Guest("Karel Dvořák", LocalDate.of(1979,1,3));
+        Guest guest5 =
+                new Guest("Karolína Tmavá", LocalDate.of(1994,5,8));
 
+        // Vytvoření pokojů
         Room room1 =
                 new Room("Balkón s výhledem na moře ", 1, 1, 1000);
         Room room2 =
@@ -22,14 +34,30 @@ public class Main {
         Room room3 =
                 new Room("Bez balkónu, s výhledem na moře", 3, 3, 2400);
 
-        Booking booking1;
-        booking1 = new Booking(true, LocalDate.of(2021, 7, 19),
-        LocalDate.of(2021, 9, 14));
+        // Vytvoření rezervací
+        Booking booking1 = new Booking(true,LocalDate.of(2023,6,1), LocalDate.of(2023,6,7));
+        Booking booking2 = new Booking(false, LocalDate.of(2023,7,18), LocalDate.of(2023,7,21));
+        LocalDate startDate = LocalDate.of(2023,8,1);
 
-        Booking booking2;
-        booking2 = new Booking(false, LocalDate.of(2021,9,1),
-        LocalDate.of(2021,9,14));
+        for (int i = 0; i < 10; i++){
+            LocalDate endDate = startDate.plusDays(1);
+            Booking recreationalBooking = new Booking(false, startDate, endDate);
+            bookingManager.addBooking(recreationalBooking);
+            startDate = startDate.plusDays(2);
+        }
 
+        bookingManager.addBooking(booking1);
+        bookingManager.addBooking(booking2);
+
+        //Vytvoření rezervací pro Karolínu Tmavou
+        startDate = LocalDate.of(2023,8,1);
+        for (int i = 0; i < 10; i++){
+            LocalDate endDate = startDate.plusDays(1);
+            Booking recreationalBooking = new Booking(false,startDate,endDate);
+            recreationalBooking.addGuest(guest5);
+            bookingManager.addBooking(recreationalBooking);
+            startDate = startDate.plusDays(2);
+        }
 
         List<Guest> guestList = new ArrayList<>();
         guestList.add(guest1);
@@ -106,5 +134,6 @@ public class Main {
         }
         System.out.println("Seznam všech rezervací: " + bookingList.size());
     }
+
 
 }
