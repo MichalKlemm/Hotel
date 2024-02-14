@@ -2,16 +2,15 @@ package com.engeto.ja.hotel;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 public class Booking {
 
     private boolean typeOfVacation;
-
     private LocalDate arrivalDate;
-
     private LocalDate departureDate;
-
     private int numberOfGuests;
+    private List<Guest> guests;
 
 
     public Booking(boolean typeOfVacation, LocalDate arrivalDate, LocalDate departureDate) {
@@ -39,6 +38,14 @@ public class Booking {
 
     public LocalDate getDeparturedate() {
         return departureDate;
+    }
+
+    public void addGuest(Guest guest){
+        guests.add(guest);
+    }
+
+    public List<Guest> getGuests(){
+        return guests;
     }
 
     public int getNumberOfGuests(){
