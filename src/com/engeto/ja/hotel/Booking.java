@@ -1,5 +1,6 @@
 package com.engeto.ja.hotel;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Booking {
@@ -10,11 +11,14 @@ public class Booking {
 
     private LocalDate departureDate;
 
+    private int numberOfGuests;
+
 
     public Booking(boolean typeOfVacation, LocalDate arrivalDate, LocalDate departureDate) {
         this.typeOfVacation = typeOfVacation;
         this.arrivalDate = arrivalDate;
         this.departureDate = departureDate;
+        this.numberOfGuests = numberOfGuests;
     }
 
     public boolean getTypeOfVacation() {
@@ -37,9 +41,17 @@ public class Booking {
         return departureDate;
     }
 
+    public int getNumberOfGuests(){
+        return numberOfGuests;
+    }
+    public void setNumberOfGuests(int numberOfGuests){
+        this.numberOfGuests = numberOfGuests;
+    }
+
     public void setDeparturedate(LocalDate departuredate) {
         this.departureDate = departuredate;
     }
+
     public String returnTypeOfVacation(){
         String stayType;
         if (typeOfVacation){
