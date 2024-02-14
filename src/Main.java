@@ -58,6 +58,10 @@ public class Main {
             bookingManager.addBooking(recreationalBooking);
             startDate = startDate.plusDays(2);
         }
+        //Vytvoření rezervace pro Karolínu Tmavou na celý srpen
+        Booking fullAugustBooking = new Booking(false, LocalDate.of(2023,8,1), LocalDate.of(2023,8,31));
+        fullAugustBooking.addGuest(guest5);
+        bookingManager.addBooking(fullAugustBooking);
 
         List<Guest> guestList = new ArrayList<>();
         guestList.add(guest1);
