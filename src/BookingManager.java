@@ -50,7 +50,7 @@ public class BookingManager {
 
     public void printAllBookings(){
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        for (Booking booking : bookings){
+        for (Booking booking : bookings) {
             LocalDate startDate = booking.getArrivaldate();
             LocalDate endDate = booking.getDeparturedate();
             List<Guest> guests = booking.getGuests();
@@ -59,16 +59,21 @@ public class BookingManager {
 
             String formattedStartDate = startDate.format(dateFormatter);
             String formattedEndDate = endDate.format(dateFormatter);
+            if (!guests.isEmpty()){
             String guestName = guests.get(0).getName();
             LocalDate guestBirthdate = guests.get(0).getBirthdate();
             int numberOfGuests = guests.size();
-            String seaView = hasSeaView ? "ano" : "ne";
+            String seaView = hasSeaView ? "ano," : "ne,";
 
             // Výpis rezervace ve formátu
             System.out.println(formattedStartDate + " až " + formattedEndDate + ": " +
                     guestName + " (" + guestBirthdate + ")" +
-                    "[" + numberOfGuests + ", výhled na moře " + seaView + " za " + price + " Kč");
-
+                    " poč. hostů: " + numberOfGuests + ", výhled na moře: " + seaView + " za " + price + " Kč");
+        } else {
+                String seaView = hasSeaView ? "ano," : "ne,";
+                System.out.println(formattedStartDate + " až " + formattedEndDate + ": " + "Bez hostů, výhled na moře: " +
+                        seaView + " za " + price + " Kč");
+            }
         }
     }
 
@@ -76,7 +81,8 @@ public class BookingManager {
         int count = 0;
         for (Booking booking : bookings){
             if (!booking.getTypeOfVacation()){
-                System.out.println(booking);
+                System.out.println("Rekreační rezervace: " + booking.getArrivaldate()
+                + " - " + booking.getDeparturedate() + ", hosté: " + booking.getGuests());
                 count++;
             }
             if (count == n){
