@@ -2,6 +2,7 @@ package com.engeto.ja.hotel;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,8 +65,13 @@ public class Booking {
         return numberOfGuests;
     }
 
+    public long getBookingLength(){
+        return ChronoUnit.DAYS.between(arrivalDate, departureDate);
+    }
+
     public BigDecimal getPrice(){
-        return price;
+        long lengthOfStay = getBookingLength();
+        return price.multiply(BigDecimal.valueOf(lengthOfStay));
     }
 
     public boolean hasSeaView(){

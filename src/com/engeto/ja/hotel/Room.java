@@ -5,11 +5,8 @@ import java.math.BigDecimal;
 public class Room {
 
     private String dispositions;
-
     private int RoomNo;
-
     private int numberOfBeds;
-
     private BigDecimal pricePerNight;
 
     public Room(String dispositions, int roomNo, int numberOfBeds, int pricePerNight) {

@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8859531-ff08-45c4-b49a-30b5d1d5fa7a" name="Changes" comment="Oprava cyklů pro výpis rezervací.&#10;Oprava proměnné typeOfVacation ze String na boolean">
+    <list default="true" id="e8859531-ff08-45c4-b49a-30b5d1d5fa7a" name="Changes" comment="Přidání podmínky&#10;&#10;pokud bude seznam hostů prázdný, tak dostanu výpis termínů, ale bez hostů, jinak házelo chybu.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BookingManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookingManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/engeto/ja/hotel/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/ja/hotel/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/engeto/ja/hotel/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/ja/hotel/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,16 +34,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "configurable.group.tools"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -77,7 +77,111 @@
       <option name="project" value="LOCAL" />
       <updated>1707766193053</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Oprava cyklů pro výpis rezervací.&#10;Oprava proměnné typeOfVacation ze String na boolean">
+      <option name="closed" value="true" />
+      <created>1707769027921</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707769027921</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Oprava cyklů pro výpis rezervací.&#10;Oprava proměnné typeOfVacation ze String na boolean">
+      <option name="closed" value="true" />
+      <created>1707769146351</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707769146351</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Přidání metod&#10;&#10;přidána metoda getNumberOfGuests">
+      <option name="closed" value="true" />
+      <created>1707931826285</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1707931826285</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Přidání metod&#10;&#10;přidána metoda pro výpis pracovních a rekreačních pobytů + metoda pro výpis průměrného počtu hostů.">
+      <option name="closed" value="true" />
+      <created>1707931910983</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1707931910983</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Přidání metody&#10;&#10;addGuest pro přidávání hostů">
+      <option name="closed" value="true" />
+      <created>1707934089991</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1707934089991</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Vytvoření metody fillBookings + vložení rezervací&#10;&#10;přidání fillBookings + doplnění hostů.&#10;&#10;vytvoření rezervací">
+      <option name="closed" value="true" />
+      <created>1707934192689</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1707934192689</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Vytvoření rezervace &#10;&#10;pro Karolínu Tmavou na celý Srpen">
+      <option name="closed" value="true" />
+      <created>1707934856118</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1707934856118</updated>
+    </task>
+    <task id="LOCAL-00011" summary="přidání výpisů rezervací&#10;&#10;pracovnich, rekreačních i statistiky počtu hostů">
+      <option name="closed" value="true" />
+      <created>1707936599052</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707936599052</updated>
+    </task>
+    <task id="LOCAL-00012" summary="přidání metod do Bookingmanageru&#10;&#10;výpis všech rezervací&#10;výpis prvních 8 rezervací&#10;statistika podle počtu hostů">
+      <option name="closed" value="true" />
+      <created>1707936699515</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1707936699515</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Přidání metod price a hasSeaView&#10;&#10;úprava třídy, přidání chybějících metod">
+      <option name="closed" value="true" />
+      <created>1707940257010</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1707940257010</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Výpis rezervací - úprava&#10;&#10;předělání výpisu rezervací&#10;úprava formátu data">
+      <option name="closed" value="true" />
+      <created>1707940378178</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1707940378178</updated>
+    </task>
+    <task id="LOCAL-00015" summary="doplnění rezervací&#10;&#10;doplnění chybějících informací do rezervací, kvůli novým metodám přidaným do třídy Booking">
+      <option name="closed" value="true" />
+      <created>1707940431007</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1707940431007</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Přidání podmínky&#10;&#10;pokud bude seznam hostů prázdný, tak dostanu výpis termínů, ale bez hostů, jinak házelo chybu.">
+      <option name="closed" value="true" />
+      <created>1707941684509</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1707941684509</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -91,9 +195,31 @@
       </list>
     </option>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Domácí úukol 2" />
     <MESSAGE value="Oprava cyklů pro výpis rezervací.&#10;Oprava proměnné typeOfVacation ze String na boolean" />
-    <option name="LAST_COMMIT_MESSAGE" value="Oprava cyklů pro výpis rezervací.&#10;Oprava proměnné typeOfVacation ze String na boolean" />
+    <MESSAGE value="Přidání metod&#10;&#10;přidána metoda getNumberOfGuests" />
+    <MESSAGE value="Přidání metod&#10;&#10;přidána metoda pro výpis pracovních a rekreačních pobytů + metoda pro výpis průměrného počtu hostů." />
+    <MESSAGE value="Přidání metody&#10;&#10;addGuest pro přidávání hostů" />
+    <MESSAGE value="Vytvoření metody fillBookings + vložení rezervací&#10;&#10;přidání fillBookings + doplnění hostů.&#10;&#10;vytvoření rezervací" />
+    <MESSAGE value="Vytvoření rezervace &#10;&#10;pro Karolínu Tmavou na celý Srpen" />
+    <MESSAGE value="přidání výpisů rezervací&#10;&#10;pracovnich, rekreačních i statistiky počtu hostů" />
+    <MESSAGE value="přidání metod do Bookingmanageru&#10;&#10;výpis všech rezervací&#10;výpis prvních 8 rezervací&#10;statistika podle počtu hostů" />
+    <MESSAGE value="Přidání metod price a hasSeaView&#10;&#10;úprava třídy, přidání chybějících metod" />
+    <MESSAGE value="Výpis rezervací - úprava&#10;&#10;předělání výpisu rezervací&#10;úprava formátu data" />
+    <MESSAGE value="doplnění rezervací&#10;&#10;doplnění chybějících informací do rezervací, kvůli novým metodám přidaným do třídy Booking" />
+    <MESSAGE value="Přidání podmínky&#10;&#10;pokud bude seznam hostů prázdný, tak dostanu výpis termínů, ale bez hostů, jinak házelo chybu." />
+    <option name="LAST_COMMIT_MESSAGE" value="Přidání podmínky&#10;&#10;pokud bude seznam hostů prázdný, tak dostanu výpis termínů, ale bez hostů, jinak házelo chybu." />
   </component>
 </project>
