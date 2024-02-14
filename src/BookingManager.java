@@ -1,5 +1,9 @@
 import com.engeto.ja.hotel.Booking;
+import com.engeto.ja.hotel.Guest;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +41,7 @@ public class BookingManager {
     public int getNumberOfRecreationalBookings(){
         int recreationalBookings = 0;
         for (Booking booking : bookings){
-        if (!booking.getTypeOfVacation()) {
+            if (!booking.getTypeOfVacation()) {
             recreationalBookings++;
             }
         }
@@ -45,8 +49,26 @@ public class BookingManager {
     }
 
     public void printAllBookings(){
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         for (Booking booking : bookings){
-            System.out.println(booking);;
+            LocalDate startDate = booking.getArrivaldate();
+            LocalDate endDate = booking.getDeparturedate();
+            List<Guest> guests = booking.getGuests();
+            boolean hasSeaView = booking.hasSeaView();
+            BigDecimal price = booking.getPrice();
+
+            String formattedStartDate = startDate.format(dateFormatter);
+            String formattedEndDate = endDate.format(dateFormatter);
+            String guestName = guests.get(0).getName();
+            LocalDate guestBirthdate = guests.get(0).getBirthdate();
+            int numberOfGuests = guests.size();
+            String seaView = hasSeaView ? "ano" : "ne";
+
+            // Výpis rezervace ve formátu
+            System.out.println(formattedStartDate + " až " + formattedEndDate + ": " +
+                    guestName + " (" + guestBirthdate + ")" +
+                    "[" + numberOfGuests + ", výhled na moře " + seaView + " za " + price + " Kč");
+
         }
     }
 
@@ -72,17 +94,17 @@ public class BookingManager {
             int guestCount = booking.getGuests().size();
             if (guestCount == 1) {
                 singleGuest++;
-            }else if (guestCount == 2){
-                    doubleGuest++;
-                    }else {
-                        multipleGuest++;
-                    }
-                }
-                System.out.println("Celkový počet rezervací s jedním hostem: " + singleGuest);
-                System.out.println("Celkový počet rezervací se dvěma hosty: " + doubleGuest);
-                System.out.println("Celkový počet rezervací s více než dvěma hosty: " + multipleGuest);
+            } else if (guestCount == 2) {
+                doubleGuest++;
+            } else {
+                multipleGuest++;
             }
         }
+
+        System.out.println("Celkový počet rezervací s jedním hostem: " + singleGuest);
+        System.out.println("Celkový počet rezervací se dvěma hosty: " + doubleGuest);
+        System.out.println("Celkový počet rezervací s více než dvěma hosty: " + multipleGuest);
+    }
 
     public double getAverageGuests(){
         if (bookings.isEmpty()){
@@ -95,5 +117,4 @@ public class BookingManager {
         }
         return (double) totalGuests / bookings.size();
     }
-
 }
