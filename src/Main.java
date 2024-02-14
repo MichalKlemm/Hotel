@@ -2,6 +2,7 @@ import com.engeto.ja.hotel.Booking;
 import com.engeto.ja.hotel.Guest;
 import com.engeto.ja.hotel.Room;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,18 +31,23 @@ public class Main {
         Room room1 =
                 new Room("Balkón s výhledem na moře ", 1, 1, 1000);
         Room room2 =
-                new Room("Balkón s výhledem na moře", 2, 1, 1000);
+                new Room("Balkón bez výhledu na moře", 2, 1, 800);
         Room room3 =
-                new Room("Bez balkónu, s výhledem na moře", 3, 3, 2400);
+                new Room("Balkón, s výhledem na moře", 3, 3, 2400);
 
         // Vytvoření rezervací
-        Booking booking1 = new Booking(true,LocalDate.of(2023,6,1), LocalDate.of(2023,6,7));
-        Booking booking2 = new Booking(false, LocalDate.of(2023,7,18), LocalDate.of(2023,7,21));
+        Booking booking1 = new Booking(true,LocalDate.of(2023,6,1),
+                LocalDate.of(2023,6,7),1,true,
+                BigDecimal.valueOf(1000));
+        Booking booking2 = new Booking(false, LocalDate.of(2023,7,18),
+                LocalDate.of(2023,7,21),1,false,
+                BigDecimal.valueOf(800));
         LocalDate startDate = LocalDate.of(2023,8,1);
 
         for (int i = 0; i < 10; i++){
             LocalDate endDate = startDate.plusDays(1);
-            Booking recreationalBooking = new Booking(false, startDate, endDate);
+            Booking recreationalBooking = new Booking(false, startDate,
+                    endDate,1,true, BigDecimal.valueOf(1000));
             bookingManager.addBooking(recreationalBooking);
             startDate = startDate.plusDays(2);
         }
@@ -50,13 +56,16 @@ public class Main {
         startDate = LocalDate.of(2023,8,1);
         for (int i = 0; i < 10; i++){
             LocalDate endDate = startDate.plusDays(1);
-            Booking recreationalBooking = new Booking(false,startDate,endDate);
+            Booking recreationalBooking = new Booking(false,startDate,
+                    endDate, 2, false, BigDecimal.valueOf(800));
             recreationalBooking.addGuest(guest5);
             bookingManager.addBooking(recreationalBooking);
             startDate = startDate.plusDays(2);
         }
         //Vytvoření rezervace pro Karolínu Tmavou na celý srpen
-        Booking fullAugustBooking = new Booking(false, LocalDate.of(2023,8,1), LocalDate.of(2023,8,31));
+        Booking fullAugustBooking = new Booking(false, LocalDate.of(2023,8,1),
+                LocalDate.of(2023,8,31),1,true,
+                BigDecimal.valueOf(1000));
         fullAugustBooking.addGuest(guest5);
         bookingManager.addBooking(fullAugustBooking);
 
